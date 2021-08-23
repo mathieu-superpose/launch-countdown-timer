@@ -95,15 +95,21 @@ main {
     .test__display__behind__container, .test__display__top__container, .test__display__bottom__container, .test__display__middle__container {
       position: relative;
       height: 5.5em;
-      background: #343650;
       border-radius: 10px;
       overflow: hidden;
       border: 1px solid #191a24; }
       .test__display__behind__container__number, .test__display__top__container__number, .test__display__bottom__container__number, .test__display__middle__container__number {
-        color: #fb6087;
         font-size: 6em;
         font-weight: bold;
         text-align: center; }
+  .test__display__behind__container, .test__display__top__container {
+    background: #282a3e; }
+    .test__display__behind__container__number, .test__display__top__container__number {
+      color: #fb6087; }
+  .test__display__bottom__container, .test__display__middle__container {
+    background: #343650; }
+    .test__display__bottom__container__number, .test__display__middle__container__number {
+      color: #fc7e9d; }
   .test__display__behind__container__number {
     position: relative;
     top: 23px; }
@@ -111,22 +117,22 @@ main {
     transform: translateY(-5.56em); }
     .test__display__top__container {
       transform-origin: bottom;
-      transition: transform ease-in .4s; }
+      transition: transform ease .2s; }
       .test__display__top__container__number {
         position: relative;
         top: 23px; }
   .test__display__bottom {
-    transform: translateY(-5.57em); }
+    transform: translateY(-5.58em); }
     .test__display__bottom__container__number {
       position: relative;
       top: -55px;
       text-align: center; }
   .test__display__middle {
-    transform: translateY(-11.14em); }
+    transform: translateY(-11.16em); }
     .test__display__middle__container {
       transform-origin: top;
       transform: rotateX(90deg);
-      transition: transform .4s ease-out .45s; }
+      transition: transform .2s ease .21s; }
       .test__display__middle__container__number {
         position: relative;
         top: -55px;

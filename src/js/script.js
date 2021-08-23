@@ -48,6 +48,7 @@ const turn = (timeperiod) => {
 	timeperiod.middle.cell.style.transform = "rotateX(0deg)";
 
 	setTimeout(() => {
+
 		timeperiod.top.content.innerHTML = counter;
 		timeperiod.bottom.content.innerHTML = counter;
 
@@ -59,16 +60,17 @@ const turn = (timeperiod) => {
 
 		timeperiod.top.cell.style.transform = "rotateX(0deg)";
 		timeperiod.middle.cell.style.transform = "rotateX(90deg)";
-	}, 850);
 
-		timeperiod.top.cell.style.transition = "transform ease-in .4s";
-		timeperiod.middle.cell.style.transition = "transform .4s ease-out .45s";
+	}, 600);
 
-		timeperiod.top.cell.style.visibility = "visible";
-		timeperiod.middle.cell.style.visibility = "visible";
+	timeperiod.top.cell.style.transition = "transform ease-in .2s";
+	timeperiod.middle.cell.style.transition = "transform .2s ease-out .21s";
 
+	timeperiod.top.cell.style.visibility = "visible";
+	timeperiod.middle.cell.style.visibility = "visible";
 };
 
+setInterval(() => turn(test), 1000);
 // const countdown = () => {
 // 	const remaining = objective - Date.now();
 // 	let remSECONDS = Math.floor((remaining%MINUTE)/SECOND);
@@ -96,5 +98,6 @@ const turn = (timeperiod) => {
 // 	setTimeout(showCountdown, 1000);
 // }
 
+// setInterval(() => turn(test), 1000);
 // showCountdown();
-//countdown();
+// countdown();

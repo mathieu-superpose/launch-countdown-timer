@@ -72,15 +72,31 @@ main {
 			&__container {
 				position: relative;
 				height: 5.5em;
-				background: $dark-desaturated-blue;
 				border-radius: 10px;
 				overflow: hidden;
 				border: 1px solid $very-dark-black-blue;
 				&__number {
-					color: $soft-red;
 					font-size: 6em;
 					font-weight: bold;
 					text-align: center;
+				}
+			}
+		}
+		&__behind,
+		&__top {
+			&__container {
+				background: $darker-desaturated-blue;
+				&__number {
+					color: $soft-red;
+				}
+			}
+		}
+		&__bottom,
+		&__middle {
+			&__container {
+				background: $dark-desaturated-blue;
+				&__number {
+					color: $softer-red;
 				}
 			}
 		}
@@ -100,7 +116,7 @@ main {
 			&__container {
 				//background: blue;
 				transform-origin: bottom;
-				transition: transform ease-in .4s;
+				transition: transform ease .2s;
 				&__number {
 					position: relative;
 					top: 23px;
@@ -108,7 +124,7 @@ main {
 			}
 		}
 		&__bottom {
-			transform: translateY(-5.57em);
+			transform: translateY(-5.58em);
 			&__container {
 				//background: yellow;
 				&__number {
@@ -119,12 +135,12 @@ main {
 			}
 		}
 		&__middle {
-			transform: translateY(-5.57em * 2);
+			transform: translateY(-5.58em * 2);
 			&__container {
 				//background: green;
 				transform-origin: top;
 				transform: rotateX(90deg);
-				transition: transform .4s ease-out .45s;
+				transition: transform .2s ease .21s;
 				&__number {
 					position: relative;
 					top: -55px;
