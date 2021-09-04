@@ -57,86 +57,164 @@ main {
 .days,
 .hours,
 .minutes,
-.seconds,
-.test {
+.seconds {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 8em; }
-  .days__count,
-  .hours__count,
-  .minutes__count,
-  .seconds__count,
-  .test__count {
-    color: #fb6087;
-    font-size: 6em;
-    font-weight: bold; }
+  align-items: center; }
+  .days__display,
+  .hours__display,
+  .minutes__display,
+  .seconds__display {
+    background: #191a24;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    width: 12em;
+    height: 12em; }
+    .days__display__behind, .days__display__top, .days__display__bottom, .days__display__middle,
+    .hours__display__behind,
+    .hours__display__top,
+    .hours__display__bottom,
+    .hours__display__middle,
+    .minutes__display__behind,
+    .minutes__display__top,
+    .minutes__display__bottom,
+    .minutes__display__middle,
+    .seconds__display__behind,
+    .seconds__display__top,
+    .seconds__display__bottom,
+    .seconds__display__middle {
+      position: relative;
+      height: 5.5em;
+      margin: 1px; }
+      .days__display__behind__container, .days__display__top__container, .days__display__bottom__container, .days__display__middle__container,
+      .hours__display__behind__container,
+      .hours__display__top__container,
+      .hours__display__bottom__container,
+      .hours__display__middle__container,
+      .minutes__display__behind__container,
+      .minutes__display__top__container,
+      .minutes__display__bottom__container,
+      .minutes__display__middle__container,
+      .seconds__display__behind__container,
+      .seconds__display__top__container,
+      .seconds__display__bottom__container,
+      .seconds__display__middle__container {
+        position: relative;
+        height: 5.5em;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #191a24; }
+        .days__display__behind__container__number, .days__display__top__container__number, .days__display__bottom__container__number, .days__display__middle__container__number,
+        .hours__display__behind__container__number,
+        .hours__display__top__container__number,
+        .hours__display__bottom__container__number,
+        .hours__display__middle__container__number,
+        .minutes__display__behind__container__number,
+        .minutes__display__top__container__number,
+        .minutes__display__bottom__container__number,
+        .minutes__display__middle__container__number,
+        .seconds__display__behind__container__number,
+        .seconds__display__top__container__number,
+        .seconds__display__bottom__container__number,
+        .seconds__display__middle__container__number {
+          font-size: 6em;
+          font-weight: bold;
+          text-align: center; }
+    .days__display__behind__container, .days__display__top__container,
+    .hours__display__behind__container,
+    .hours__display__top__container,
+    .minutes__display__behind__container,
+    .minutes__display__top__container,
+    .seconds__display__behind__container,
+    .seconds__display__top__container {
+      background: #282a3e; }
+      .days__display__behind__container__number, .days__display__top__container__number,
+      .hours__display__behind__container__number,
+      .hours__display__top__container__number,
+      .minutes__display__behind__container__number,
+      .minutes__display__top__container__number,
+      .seconds__display__behind__container__number,
+      .seconds__display__top__container__number {
+        color: #fb6087; }
+    .days__display__bottom__container, .days__display__middle__container,
+    .hours__display__bottom__container,
+    .hours__display__middle__container,
+    .minutes__display__bottom__container,
+    .minutes__display__middle__container,
+    .seconds__display__bottom__container,
+    .seconds__display__middle__container {
+      background: #343650; }
+      .days__display__bottom__container__number, .days__display__middle__container__number,
+      .hours__display__bottom__container__number,
+      .hours__display__middle__container__number,
+      .minutes__display__bottom__container__number,
+      .minutes__display__middle__container__number,
+      .seconds__display__bottom__container__number,
+      .seconds__display__middle__container__number {
+        color: #fc7e9d; }
+    .days__display__behind__container__number,
+    .hours__display__behind__container__number,
+    .minutes__display__behind__container__number,
+    .seconds__display__behind__container__number {
+      position: relative;
+      top: 23px; }
+    .days__display__top,
+    .hours__display__top,
+    .minutes__display__top,
+    .seconds__display__top {
+      transform: translateY(-5.56em); }
+      .days__display__top__container,
+      .hours__display__top__container,
+      .minutes__display__top__container,
+      .seconds__display__top__container {
+        transform-origin: bottom;
+        transition: transform ease .2s; }
+        .days__display__top__container__number,
+        .hours__display__top__container__number,
+        .minutes__display__top__container__number,
+        .seconds__display__top__container__number {
+          position: relative;
+          top: 23px; }
+    .days__display__bottom,
+    .hours__display__bottom,
+    .minutes__display__bottom,
+    .seconds__display__bottom {
+      transform: translateY(-5.58em); }
+      .days__display__bottom__container__number,
+      .hours__display__bottom__container__number,
+      .minutes__display__bottom__container__number,
+      .seconds__display__bottom__container__number {
+        position: relative;
+        top: -55px;
+        text-align: center; }
+    .days__display__middle,
+    .hours__display__middle,
+    .minutes__display__middle,
+    .seconds__display__middle {
+      transform: translateY(-11.16em); }
+      .days__display__middle__container,
+      .hours__display__middle__container,
+      .minutes__display__middle__container,
+      .seconds__display__middle__container {
+        transform-origin: top;
+        transform: rotateX(90deg);
+        transition: transform .2s ease .21s; }
+        .days__display__middle__container__number,
+        .hours__display__middle__container__number,
+        .minutes__display__middle__container__number,
+        .seconds__display__middle__container__number {
+          position: relative;
+          top: -55px;
+          text-align: center; }
   .days__period,
   .hours__period,
   .minutes__period,
-  .seconds__period,
-  .test__period {
+  .seconds__period {
     color: #8486a9;
     font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.3em; }
-
-.test__display {
-  background: #191a24;
-  border-radius: 10px;
-  padding-bottom: 10px;
-  width: 12em;
-  height: 12em; }
-  .test__display__behind, .test__display__top, .test__display__bottom, .test__display__middle {
-    position: relative;
-    height: 5.5em;
-    margin: 1px; }
-    .test__display__behind__container, .test__display__top__container, .test__display__bottom__container, .test__display__middle__container {
-      position: relative;
-      height: 5.5em;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #191a24; }
-      .test__display__behind__container__number, .test__display__top__container__number, .test__display__bottom__container__number, .test__display__middle__container__number {
-        font-size: 6em;
-        font-weight: bold;
-        text-align: center; }
-  .test__display__behind__container, .test__display__top__container {
-    background: #282a3e; }
-    .test__display__behind__container__number, .test__display__top__container__number {
-      color: #fb6087; }
-  .test__display__bottom__container, .test__display__middle__container {
-    background: #343650; }
-    .test__display__bottom__container__number, .test__display__middle__container__number {
-      color: #fc7e9d; }
-  .test__display__behind__container__number {
-    position: relative;
-    top: 23px; }
-  .test__display__top {
-    transform: translateY(-5.56em); }
-    .test__display__top__container {
-      transform-origin: bottom;
-      transition: transform ease .2s; }
-      .test__display__top__container__number {
-        position: relative;
-        top: 23px; }
-  .test__display__bottom {
-    transform: translateY(-5.58em); }
-    .test__display__bottom__container__number {
-      position: relative;
-      top: -55px;
-      text-align: center; }
-  .test__display__middle {
-    transform: translateY(-11.16em); }
-    .test__display__middle__container {
-      transform-origin: top;
-      transform: rotateX(90deg);
-      transition: transform .2s ease .21s; }
-      .test__display__middle__container__number {
-        position: relative;
-        top: -55px;
-        text-align: center; }
 
 footer {
   height: 30vh;

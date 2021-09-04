@@ -21,36 +21,18 @@ const getCells = (timeperiod) => {
 	}
 }
 
-const test = getCells("test");
+const turn = (timeperiod, nextContent) => {
 
-
-const days = document.querySelector('.days__count');
-const hours = document.querySelector('.hours__count');
-const minutes = document.querySelector('.minutes__count');
-const seconds = document.querySelector('.seconds__count'); 
-
-const SECOND = 1000;
-const MINUTE = 60 * SECOND;
-const HOUR = 60 * MINUTE;
-const DAY = 24 * HOUR;
-
-const objective = Date.now() + 14 * DAY;
-
-let counter = 0;
-
-const turn = (timeperiod) => {
-	counter += 1;
-
-	timeperiod.behind.content.innerHTML = counter;
-	timeperiod.middle.content.innerHTML = counter;
+	timeperiod.behind.content.innerHTML = nextContent;
+	timeperiod.middle.content.innerHTML = nextContent;
 
 	timeperiod.top.cell.style.transform = "rotateX(90deg)";
 	timeperiod.middle.cell.style.transform = "rotateX(0deg)";
 
 	setTimeout(() => {
 
-		timeperiod.top.content.innerHTML = counter;
-		timeperiod.bottom.content.innerHTML = counter;
+		timeperiod.top.content.innerHTML = nextContent;
+		timeperiod.bottom.content.innerHTML = nextContent;
 
 		timeperiod.top.cell.style.visibility = "hidden";
 		timeperiod.middle.cell.style.visibility = "hidden";
@@ -70,34 +52,51 @@ const turn = (timeperiod) => {
 	timeperiod.middle.cell.style.visibility = "visible";
 };
 
-setInterval(() => turn(test), 1000);
-// const countdown = () => {
-// 	const remaining = objective - Date.now();
-// 	let remSECONDS = Math.floor((remaining%MINUTE)/SECOND);
-// 	let prevSECONDS = remSECONDS + 1;
+const getTimes = (delay=0) => {
 
-// 	console.log(`turn ${prevSECONDS} to ${remSECONDS}`)
-  
-// 	setTimeout(countdown, 250);
-// }
+	const remaining = objective + delay - Date.now();
 
-// TO BE DELETED setInterval(() => console.log((Date.now()%MINUTE)/SECOND), 250);
+	let remDAYS = Math.floor(remaining/DAY) > 9 ? "" + Math.floor(remaining/DAY) : "0" + Math.floor(remaining/DAY);
+	let remHOURS = Math.floor((remaining%DAY)/HOUR) > 9 ? "" + Math.floor((remaining%DAY)/HOUR) : "0" + Math.floor((remaining%DAY)/HOUR);
+	let remMINUTES = Math.floor((remaining%HOUR)/MINUTE) > 9 ? "" + Math.floor((remaining%HOUR)/MINUTE) :  "0" + Math.floor((remaining%HOUR)/MINUTE);
+	let remSECONDS = Math.floor((remaining%MINUTE)/SECOND) > 9 ? "" + Math.floor((remaining%MINUTE)/SECOND) : "0" + Math.floor((remaining%MINUTE)/SECOND);
 
-// const showCountdown = () => {
-// 	const remaining = objective - Date.now();
-// 	let remDAYS = Math.floor(remaining/DAY) > 9 ? "" + Math.floor(remaining/DAY) : "0" + Math.floor(remaining/DAY);
-// 	let remHOURS = Math.floor((remaining%DAY)/HOUR) > 9 ? "" + Math.floor((remaining%DAY)/HOUR) : "0" + Math.floor((remaining%DAY)/HOUR);
-// 	let remMINUTES = Math.floor((remaining%HOUR)/MINUTE) > 9 ? "" + Math.floor((remaining%HOUR)/MINUTE) :  "0" + Math.floor((remaining%HOUR)/MINUTE);
-// 	let remSECONDS = Math.floor((remaining%MINUTE)/SECOND) > 9 ? "" + Math.floor((remaining%MINUTE)/SECOND) : "0" + Math.floor((remaining%MINUTE)/SECOND);
+	return {remDAYS, remHOURS, remMINUTES, remSECONDS}
+}
 
-// 	days.innerHTML = remDAYS;
-// 	hours.innerHTML = remHOURS;
-// 	minutes.innerHTML = remMINUTES;
-// 	seconds.innerHTML = remSECONDS;
-  
-// 	setTimeout(showCountdown, 1000);
-// }
+const init = () => {
 
-// setInterval(() => turn(test), 1000);
-// showCountdown();
-// countdown();
+	const t = getTimes();
+
+	turn(days, t.remDAYS);
+	turn(hours, t.remHOURS);
+	turn(minutes, t.remMINUTES);
+	turn(seconds, t.remSECONDS);
+}
+
+const showCountdown = () => {
+
+	const t = getTimes();
+	const l = getTimes(1000);
+
+	if (t.remDAYS != l.remDAYS) turn(days, t.remDAYS);
+	if (t.remHOURS != l.remHOURS) turn(hours, t.remHOURS);
+	if (t.remMINUTES != l.remMINUTES) turn(minutes, t.remMINUTES);
+	if (t.remSECONDS != l.remSECONDS) turn(seconds, t.remSECONDS);
+}
+
+const days = getCells("days");
+const hours = getCells("hours");
+const minutes = getCells("minutes");
+const seconds = getCells("seconds");
+
+const SECOND = 1000;
+const MINUTE = 60 * SECOND;
+const HOUR = 60 * MINUTE;
+const DAY = 24 * HOUR;
+
+const objective = Date.now() + 14 * DAY;
+
+init();
+
+setInterval(() => showCountdown(), 1000);

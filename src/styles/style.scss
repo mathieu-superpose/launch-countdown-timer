@@ -33,30 +33,11 @@ main {
 .days, 
 .hours, 
 .minutes, 
-.seconds,
-.test {
+.seconds {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 8em;
-	&__count {
-		color: $soft-red;
-		font-size: 6em;
-		font-weight: bold;
-	}
-	&__period {
-		color: $grayish-blue;
-		font-size: 1em;
-		font-weight: bold;
-		text-transform: uppercase;
-		letter-spacing: 0.3em;
-	}
-}
-
-.test {
 	&__display {
-		// height: 8em;
-		// width: 8em;
 		background: $very-dark-black-blue;
 		border-radius: 10px;
 		padding-bottom: 10px;
@@ -102,9 +83,7 @@ main {
 		}
 
 		&__behind {
-			//transform: translateY(-1px);
 			&__container {
-				//background: red;
 				&__number {
 					position: relative;
 					top: 23px;
@@ -126,7 +105,6 @@ main {
 		&__bottom {
 			transform: translateY(-5.58em);
 			&__container {
-				//background: yellow;
 				&__number {
 					position: relative;
 					top: -55px;
@@ -137,7 +115,6 @@ main {
 		&__middle {
 			transform: translateY(-5.58em * 2);
 			&__container {
-				//background: green;
 				transform-origin: top;
 				transform: rotateX(90deg);
 				transition: transform .2s ease .21s;
@@ -148,6 +125,13 @@ main {
 				}
 			}
 		}
+	}
+	&__period {
+		color: $grayish-blue;
+		font-size: 1em;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0.3em;
 	}
 }
 
