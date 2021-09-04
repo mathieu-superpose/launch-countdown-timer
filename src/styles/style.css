@@ -42,17 +42,24 @@ header {
   justify-content: center;
   align-items: center; }
   header h1 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: bold;
     color: white;
     text-transform: uppercase;
-    letter-spacing: 0.3em; }
+    letter-spacing: 0.4em;
+    text-align: center; }
+    @media (min-width: 800px) {
+      header h1 {
+        font-size: 1.8em; } }
 
 main {
   height: 35vh;
   display: flex;
   justify-content: center;
-  gap: 3em; }
+  gap: .5em; }
+  @media (min-width: 800px) {
+    main {
+      gap: 3em; } }
 
 .days,
 .hours,
@@ -66,10 +73,10 @@ main {
   .minutes__display,
   .seconds__display {
     background: #191a24;
-    border-radius: 10px;
-    padding-bottom: 10px;
-    width: 12em;
-    height: 12em; }
+    border-radius: 5px;
+    padding-bottom: 2px;
+    width: 5.5em;
+    height: 4.8em; }
     .days__display__behind, .days__display__top, .days__display__bottom, .days__display__middle,
     .hours__display__behind,
     .hours__display__top,
@@ -84,7 +91,7 @@ main {
     .seconds__display__bottom,
     .seconds__display__middle {
       position: relative;
-      height: 5.5em;
+      height: 2.25em;
       margin: 1px; }
       .days__display__behind__container, .days__display__top__container, .days__display__bottom__container, .days__display__middle__container,
       .hours__display__behind__container,
@@ -100,8 +107,8 @@ main {
       .seconds__display__bottom__container,
       .seconds__display__middle__container {
         position: relative;
-        height: 5.5em;
-        border-radius: 10px;
+        height: 2.25em;
+        border-radius: 5px;
         overflow: hidden;
         border: 1px solid #191a24; }
         .days__display__behind__container__number, .days__display__top__container__number, .days__display__bottom__container__number, .days__display__middle__container__number,
@@ -117,9 +124,10 @@ main {
         .seconds__display__top__container__number,
         .seconds__display__bottom__container__number,
         .seconds__display__middle__container__number {
-          font-size: 6em;
+          font-size: 3em;
           font-weight: bold;
-          text-align: center; }
+          text-align: center;
+          position: relative; }
     .days__display__behind__container, .days__display__top__container,
     .hours__display__behind__container,
     .hours__display__top__container,
@@ -156,13 +164,12 @@ main {
     .hours__display__behind__container__number,
     .minutes__display__behind__container__number,
     .seconds__display__behind__container__number {
-      position: relative;
-      top: 23px; }
+      top: 2px; }
     .days__display__top,
     .hours__display__top,
     .minutes__display__top,
     .seconds__display__top {
-      transform: translateY(-5.56em); }
+      transform: translateY(-32.5px); }
       .days__display__top__container,
       .hours__display__top__container,
       .minutes__display__top__container,
@@ -173,25 +180,22 @@ main {
         .hours__display__top__container__number,
         .minutes__display__top__container__number,
         .seconds__display__top__container__number {
-          position: relative;
-          top: 23px; }
+          top: 2px; }
     .days__display__bottom,
     .hours__display__bottom,
     .minutes__display__bottom,
     .seconds__display__bottom {
-      transform: translateY(-5.58em); }
+      transform: translateY(-33px); }
       .days__display__bottom__container__number,
       .hours__display__bottom__container__number,
       .minutes__display__bottom__container__number,
       .seconds__display__bottom__container__number {
-        position: relative;
-        top: -55px;
-        text-align: center; }
+        top: -29px; }
     .days__display__middle,
     .hours__display__middle,
     .minutes__display__middle,
     .seconds__display__middle {
-      transform: translateY(-11.16em); }
+      transform: translateY(-66px); }
       .days__display__middle__container,
       .hours__display__middle__container,
       .minutes__display__middle__container,
@@ -203,18 +207,112 @@ main {
         .hours__display__middle__container__number,
         .minutes__display__middle__container__number,
         .seconds__display__middle__container__number {
-          position: relative;
-          top: -55px;
-          text-align: center; }
+          top: -29px; }
   .days__period,
   .hours__period,
   .minutes__period,
   .seconds__period {
     color: #8486a9;
-    font-size: 1em;
+    font-size: .7em;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.3em; }
+    letter-spacing: 0.4em;
+    margin-top: .7em; }
+  @media (min-width: 800px) {
+    .days__display,
+    .hours__display,
+    .minutes__display,
+    .seconds__display {
+      border-radius: 10px;
+      padding-bottom: 10px;
+      width: 12em;
+      height: 12em; }
+      .days__display__behind, .days__display__top, .days__display__bottom, .days__display__middle,
+      .hours__display__behind,
+      .hours__display__top,
+      .hours__display__bottom,
+      .hours__display__middle,
+      .minutes__display__behind,
+      .minutes__display__top,
+      .minutes__display__bottom,
+      .minutes__display__middle,
+      .seconds__display__behind,
+      .seconds__display__top,
+      .seconds__display__bottom,
+      .seconds__display__middle {
+        height: 5.5em;
+        margin: 1px; }
+        .days__display__behind__container, .days__display__top__container, .days__display__bottom__container, .days__display__middle__container,
+        .hours__display__behind__container,
+        .hours__display__top__container,
+        .hours__display__bottom__container,
+        .hours__display__middle__container,
+        .minutes__display__behind__container,
+        .minutes__display__top__container,
+        .minutes__display__bottom__container,
+        .minutes__display__middle__container,
+        .seconds__display__behind__container,
+        .seconds__display__top__container,
+        .seconds__display__bottom__container,
+        .seconds__display__middle__container {
+          height: 5.5em;
+          border-radius: 10px; }
+          .days__display__behind__container__number, .days__display__top__container__number, .days__display__bottom__container__number, .days__display__middle__container__number,
+          .hours__display__behind__container__number,
+          .hours__display__top__container__number,
+          .hours__display__bottom__container__number,
+          .hours__display__middle__container__number,
+          .minutes__display__behind__container__number,
+          .minutes__display__top__container__number,
+          .minutes__display__bottom__container__number,
+          .minutes__display__middle__container__number,
+          .seconds__display__behind__container__number,
+          .seconds__display__top__container__number,
+          .seconds__display__bottom__container__number,
+          .seconds__display__middle__container__number {
+            font-size: 6em; }
+      .days__display__behind__container__number,
+      .hours__display__behind__container__number,
+      .minutes__display__behind__container__number,
+      .seconds__display__behind__container__number {
+        top: 23px; }
+      .days__display__top,
+      .hours__display__top,
+      .minutes__display__top,
+      .seconds__display__top {
+        transform: translateY(-5.56em); }
+        .days__display__top__container__number,
+        .hours__display__top__container__number,
+        .minutes__display__top__container__number,
+        .seconds__display__top__container__number {
+          top: 23px; }
+      .days__display__bottom,
+      .hours__display__bottom,
+      .minutes__display__bottom,
+      .seconds__display__bottom {
+        transform: translateY(-5.58em); }
+        .days__display__bottom__container__number,
+        .hours__display__bottom__container__number,
+        .minutes__display__bottom__container__number,
+        .seconds__display__bottom__container__number {
+          top: -55px; }
+      .days__display__middle,
+      .hours__display__middle,
+      .minutes__display__middle,
+      .seconds__display__middle {
+        transform: translateY(-11.16em); }
+        .days__display__middle__container__number,
+        .hours__display__middle__container__number,
+        .minutes__display__middle__container__number,
+        .seconds__display__middle__container__number {
+          top: -55px; }
+    .days__period,
+    .hours__period,
+    .minutes__period,
+    .seconds__period {
+      font-size: 1em;
+      letter-spacing: 0.3em;
+      margin-top: 1em; } }
 
 footer {
   height: 30vh;

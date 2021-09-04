@@ -15,11 +15,15 @@ header {
 	justify-content: center;
 	align-items: center;
 	& h1 {
-		font-size: 1.8em;
+		font-size: 1.5em;
 		font-weight: bold;
 		color: $white;
 		text-transform: uppercase;
-		letter-spacing: 0.3em;
+		letter-spacing: 0.4em;
+		text-align: center;
+		@media (min-width: 800px) {
+			font-size: 1.8em;
+		}
 	}
 }
 
@@ -27,7 +31,10 @@ main {
 	height: 35vh;
 	display: flex;
 	justify-content: center;
-	gap: 3em;
+	gap: .5em;
+	@media (min-width: 800px) {
+		gap: 3em;
+	}
 }
 
 .days, 
@@ -39,27 +46,28 @@ main {
 	align-items: center;
 	&__display {
 		background: $very-dark-black-blue;
-		border-radius: 10px;
-		padding-bottom: 10px;
-		width: 12em;
-		height: 12em;
+		border-radius: 5px;
+		padding-bottom: 2px;
+		width: 5.5em;
+		height: 4.8em;
 		&__behind,
 		&__top,
 		&__bottom,
 		&__middle {
 			position: relative;
-			height: 5.5em;
+			height: 2.25em;
 			margin: 1px;
 			&__container {
 				position: relative;
-				height: 5.5em;
-				border-radius: 10px;
+				height: 2.25em;
+				border-radius: 5px;
 				overflow: hidden;
 				border: 1px solid $very-dark-black-blue;
 				&__number {
-					font-size: 6em;
+					font-size: 3em;
 					font-weight: bold;
 					text-align: center;
+					position: relative;
 				}
 			}
 		}
@@ -85,53 +93,106 @@ main {
 		&__behind {
 			&__container {
 				&__number {
-					position: relative;
-					top: 23px;
+					top: 2px;
 				}
 			}
 		}
 		&__top {
-			transform: translateY(-5.56em);
+			transform: translateY(-32.5px);
 			&__container {
-				//background: blue;
 				transform-origin: bottom;
 				transition: transform ease .2s;
 				&__number {
-					position: relative;
-					top: 23px;
+					top: 2px;
 				}
 			}
 		}
 		&__bottom {
-			transform: translateY(-5.58em);
+			transform: translateY(-33px);
 			&__container {
 				&__number {
-					position: relative;
-					top: -55px;
-					text-align: center;
+					top: -29px;
 				}
 			}
 		}
 		&__middle {
-			transform: translateY(-5.58em * 2);
+			transform: translateY(-66px);
 			&__container {
 				transform-origin: top;
 				transform: rotateX(90deg);
 				transition: transform .2s ease .21s;
 				&__number {
-					position: relative;
-					top: -55px;
-					text-align: center;
+					top: -29px;
 				}
 			}
 		}
 	}
 	&__period {
 		color: $grayish-blue;
-		font-size: 1em;
+		font-size: .7em;
 		font-weight: bold;
 		text-transform: uppercase;
-		letter-spacing: 0.3em;
+		letter-spacing: 0.4em;
+		margin-top: .7em;
+	}
+
+	@media (min-width: 800px) {
+		&__display {
+			border-radius: 10px;
+			padding-bottom: 10px;
+			width: 12em;
+			height: 12em;
+			&__behind,
+			&__top,
+			&__bottom,
+			&__middle {
+				height: 5.5em;
+				margin: 1px;
+				&__container {
+					height: 5.5em;
+					border-radius: 10px;
+					&__number {
+						font-size: 6em;
+					}
+				}
+			}
+			&__behind {
+				&__container {
+					&__number {
+						top: 23px;
+					}
+				}
+			}
+			&__top {
+				transform: translateY(-5.56em);
+				&__container {
+					&__number {
+						top: 23px;
+					}
+				}
+			}
+			&__bottom {
+				transform: translateY(-5.58em);
+				&__container {
+					&__number {
+						top: -55px;
+					}
+				}
+			}
+			&__middle {
+				transform: translateY(-5.58em * 2);
+				&__container {
+					&__number {
+						top: -55px;
+					}
+				}
+			}
+		}
+		&__period {
+			font-size: 1em;
+			letter-spacing: 0.3em;
+			margin-top: 1em;
+		}
 	}
 }
 

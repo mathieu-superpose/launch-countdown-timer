@@ -66,7 +66,7 @@ const getTimes = (delay=0) => {
 
 const init = () => {
 
-	const t = getTimes();
+	const t = getTimes(-1000);
 
 	turn(days, t.remDAYS);
 	turn(hours, t.remHOURS);
@@ -77,7 +77,7 @@ const init = () => {
 const showCountdown = () => {
 
 	const t = getTimes();
-	const l = getTimes(-1000);
+	const l = getTimes(1000);
 
 	if (t.remDAYS != l.remDAYS) turn(days, t.remDAYS);
 	if (t.remHOURS != l.remHOURS) turn(hours, t.remHOURS);
