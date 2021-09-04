@@ -1,0 +1,153 @@
+@import 'resets';
+@import 'fonts';
+@import 'colors';
+@import 'mixins';
+@import 'functions';
+
+body {
+	background: $very-dark-blue;
+	background-image: url("../img/bg-stars.svg");
+}
+
+header {
+	height: 35vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	& h1 {
+		font-size: 1.8em;
+		font-weight: bold;
+		color: $white;
+		text-transform: uppercase;
+		letter-spacing: 0.3em;
+	}
+}
+
+main {
+	height: 35vh;
+	display: flex;
+	justify-content: center;
+	gap: 3em;
+}
+
+.days, 
+.hours, 
+.minutes, 
+.seconds {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__display {
+		background: $very-dark-black-blue;
+		border-radius: 10px;
+		padding-bottom: 10px;
+		width: 12em;
+		height: 12em;
+		&__behind,
+		&__top,
+		&__bottom,
+		&__middle {
+			position: relative;
+			height: 5.5em;
+			margin: 1px;
+			&__container {
+				position: relative;
+				height: 5.5em;
+				border-radius: 10px;
+				overflow: hidden;
+				border: 1px solid $very-dark-black-blue;
+				&__number {
+					font-size: 6em;
+					font-weight: bold;
+					text-align: center;
+				}
+			}
+		}
+		&__behind,
+		&__top {
+			&__container {
+				background: $darker-desaturated-blue;
+				&__number {
+					color: $soft-red;
+				}
+			}
+		}
+		&__bottom,
+		&__middle {
+			&__container {
+				background: $dark-desaturated-blue;
+				&__number {
+					color: $softer-red;
+				}
+			}
+		}
+
+		&__behind {
+			&__container {
+				&__number {
+					position: relative;
+					top: 23px;
+				}
+			}
+		}
+		&__top {
+			transform: translateY(-5.56em);
+			&__container {
+				//background: blue;
+				transform-origin: bottom;
+				transition: transform ease .2s;
+				&__number {
+					position: relative;
+					top: 23px;
+				}
+			}
+		}
+		&__bottom {
+			transform: translateY(-5.58em);
+			&__container {
+				&__number {
+					position: relative;
+					top: -55px;
+					text-align: center;
+				}
+			}
+		}
+		&__middle {
+			transform: translateY(-5.58em * 2);
+			&__container {
+				transform-origin: top;
+				transform: rotateX(90deg);
+				transition: transform .2s ease .21s;
+				&__number {
+					position: relative;
+					top: -55px;
+					text-align: center;
+				}
+			}
+		}
+	}
+	&__period {
+		color: $grayish-blue;
+		font-size: 1em;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0.3em;
+	}
+}
+
+footer {
+	height: 30vh;
+	background-image: url("../img/pattern-hills.svg");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	& ul {
+		margin-top: 4em;
+		display: flex;
+		justify-content: center;
+		gap: 3em;
+	}
+}
